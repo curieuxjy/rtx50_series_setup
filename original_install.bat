@@ -47,16 +47,16 @@ if !errorlevel! neq 0 (
 )
 
 :: ------------------------------------------------------------
-:: STEP 4 - Create run.bat WITHOUT launching Fooocus
+:: STEP 4 - Create run.bat
 echo 📝 Step 4: Creating run.bat...
 
 (
 echo @echo off
-echo title Run Python Environment with CUDA 12.8
-echo cd /d %%~dp0
+echo title Launching Fooocus WebUI...
+echo cd /d %~dp0
 echo.
-echo REM You can customize the Python script here
-echo python_embed\python.exe
+echo REM Launch Fooocus using embedded Python
+echo python_embed\python.exe Fooocus\entry_with_update.py
 echo pause
 ) > run.bat
 
@@ -66,5 +66,5 @@ if exist run.bat (
     echo ❌ Failed to create run.bat
 )
 
-echo ✅ Setup complete. You can now run run.bat to test your environment manually!
+echo ✅ Setup complete. You can now double-click run.bat to start Fooocus!
 pause
